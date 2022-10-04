@@ -12,9 +12,7 @@ const About: FunctionComponent = () => (
 		<Grid container>
 			<Grid row className="about__top">
 				<Grid row>
-					<Grid size={2} xs={12} sm={12} lg={12} className="about__header">
-						<p className="bold">About</p>
-					</Grid>
+					<Grid size={2} xs={12} sm={12} lg={12} className="about__header" />
 					<Grid size={4} xs={12} sm={12} lg={12} className="about__subheader">
 						<h3>
 							A DAO for creators.
@@ -102,7 +100,7 @@ const About: FunctionComponent = () => (
 						</div>
 						<p className="contact__email">
 							For inquiries, email us at{" "}
-							<a href="mailto:info@sekerfactory.com">info@sekerfactory.com</a>
+							<a href="mailto:info@skeletonsteph.com">info@skeletonsteph.com</a>
 						</p>
 					</Grid>
 				</Grid>

@@ -1,7 +1,7 @@
 import {FunctionComponent, useContext, useState} from "react"
 import {ReactComponent as DoneCircle} from "../../../../assets/icons/done-circle.svg"
-// @ts-expect-error no types for video import
-import clearanceCardOneSrc from "../../../../assets/videos/Clearence_Card_00.mp4"
+//import clearanceCardOneSrc from "../../../../assets/videos/Clearence_Card_00.mp4"
+import groupiePassSrc from "../../../../assets/images/SkeletonSteph_GroupiePass.png"
 // @ts-expect-error no types for video import
 import topClearanceCardSrc from "../../../../assets/videos/Top_Clearance_Card_01.mp4"
 import Button from "../../../../components/Button"
@@ -49,10 +49,16 @@ const Membership: FunctionComponent = () => {
 			/>
 			<Grid Component="section" row className="membership">
 				<Grid container>
-					<Grid size={2} xs={12} sm={12} lg={12}>
-						<p className="membership__heading bold">Membership</p>
-					</Grid>
+					<Grid size={2} xs={12} sm={12} lg={12} />
 					<Grid size={8} xs={12} sm={12} lg={12} className="membership__content">
+						<Grid size={8} xs={12} sm={12} lg={12} className="membership__subheader">
+							<h3>
+								Introducing the Official
+								<br />
+								Skeleton Steph Genisis Mini-Series!
+								<br />
+							</h3>
+						</Grid>
 						<Grid size={12} xs={12} sm={12} lg={12} className="membership__description">
 							<p className="membership__description-content">
 								<span className="karla-bold">Introducing the Seker Factory Clearance Cards.</span>
@@ -69,14 +75,7 @@ const Membership: FunctionComponent = () => {
 						<Grid row className="membership__items-container">
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">
 								<Grid className="membership__item-img-container">
-									<video
-										src={clearanceCardOneSrc}
-										muted
-										autoPlay
-										loop
-										playsInline
-										onClick={() => handleOpenFullVideo(clearanceCardOneSrc)}
-									/>
+									<img src={groupiePassSrc} />
 									<h3>Seker Factory 001 Clearance Cards</h3>
 									<p className="membership__item-address">Downtown Los Angeles</p>
 									<p className="membership__item-minted">

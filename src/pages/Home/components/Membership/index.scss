@@ -30,6 +30,14 @@
       flex-wrap: wrap;
     }
 
+    &__subheader {
+      h3 {
+        font-family: 'Caveat-Bold', cursive;
+      }
+
+      margin-bottom: 40px;
+    }
+
     &__description {
       margin-bottom: 40px;
 
