@@ -1,9 +1,7 @@
 import {FunctionComponent, useContext, useState} from "react"
 import {ReactComponent as DoneCircle} from "../../../../assets/icons/done-circle.svg"
 //import clearanceCardOneSrc from "../../../../assets/videos/Clearence_Card_00.mp4"
-import groupiePassSrc from "../../../../assets/images/SkeletonSteph_GroupiePass.png"
-// @ts-expect-error no types for video import
-import topClearanceCardSrc from "../../../../assets/videos/Top_Clearance_Card_01.mp4"
+import groupiePassSrc from "../../../../assets/images/SkeletonSteph_Site_FanboyPass.png"
 import Button from "../../../../components/Button"
 import Grid from "../../../../components/Grid"
 import ImageModal from "../../../../components/Modal/ImageModal"
@@ -14,7 +12,6 @@ import "./index.scss"
 
 const Membership: FunctionComponent = () => {
 	const [fullVideoSrc, setFullVideoSrc] = useState<string | undefined>(undefined)
-	const handleOpenFullVideo = (src: string) => setFullVideoSrc(src)
 
 	const {
 		buyingClearanceCardType,
@@ -24,8 +21,7 @@ const Membership: FunctionComponent = () => {
 		clearanceCardMintValue,
 		setClearanceCardMintValue,
 		processingClearanceCardPurchase,
-		clearanceCardTotal,
-		topClearanceCardTotal
+		clearanceCardTotal
 	} = useMembership()
 
 	const {signIn} = useContext(Web3Context)
@@ -76,8 +72,9 @@ const Membership: FunctionComponent = () => {
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">
 								<Grid className="membership__item-img-container">
 									<img src={groupiePassSrc} />
-									<h3>Seker Factory 001 Clearance Cards</h3>
-									<p className="membership__item-address">Downtown Los Angeles</p>
+									<p className="membership__subheader-2">
+										<h3>Limited Skeleton Steph &quot;Fanboy Pass&quot; (Allowlist)</h3>
+									</p>
 									<p className="membership__item-minted">
 										{clearanceCardTotal} minted / 3000 total
 									</p>
@@ -90,147 +87,66 @@ const Membership: FunctionComponent = () => {
 										Mint NFT
 									</Button>
 								</Grid>
-								<ul>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>
-											Access to All Factory Locations
-											<br />
-											<span className="italic">(first come, first serve)</span>
-										</p>
-									</li>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>
-											Factory 001 Governance Rights
-											<br />
-											<span className="italic">
-												(including curation voting for IRL + metaverse)
-											</span>
-										</p>
-									</li>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>
-											Early access to NFTs
-											<br />
-											<span className="italic">(by Factory 001 artists)</span>
-										</p>
-									</li>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>Access to All Factory 001 IRL + Metaverse Events</p>
-									</li>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>Level starts at 0</p>
-									</li>
-									<a
-										href="https://sekerfactory.medium.com/power-over-9000-level-your-seker-factory-dao-nft-889bd6cd5577"
-										target="_blank"
-										rel="noreferrer noopener"
-									>
-										<Button variant="link">Learn More</Button>
-									</a>
-								</ul>
 							</Grid>
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">
-								<Grid className="membership__item-img-container">
-									<video
-										src={topClearanceCardSrc}
-										muted
-										autoPlay
-										loop
-										playsInline
-										onClick={() => handleOpenFullVideo(topClearanceCardSrc)}
-									/>
-									<h3>Seker Factory Top Clearance Cards</h3>
-									<p className="membership__item-address">All Locations</p>
-									<p className="membership__item-minted">
-										{topClearanceCardTotal} minted / 1500 total
+								<Grid className="membership__item-img-container-2">
+									<p className="membership__subheader-2">
+										<h3>Skip the line - mint free today!</h3>
 									</p>
-									<Button
-										onClick={async () => {
-											await signIn()
-											setBuyingClearanceCardType("TOP")
-										}}
-									>
-										Mint NFT
-									</Button>
+									<ul>
+										<li>
+											<div className="membership__item-icon-container">
+												<DoneCircle width="20px" height="20px" />
+											</div>
+											<p>
+												Lock in your minting spot for the exclusive Skeleton Steph Genesis
+												Mini-Series, which goes live Oct. 10th.
+												<br />
+											</p>
+										</li>
+										<li>
+											<div className="membership__item-icon-container">
+												<DoneCircle width="20px" height="20px" />
+											</div>
+											<p>
+												Genesis series includes variations of 7 Skeleton Steph characters, with
+												potential rarity features!
+												<br />
+											</p>
+										</li>
+										<li>
+											<div className="membership__item-icon-container">
+												<DoneCircle width="20px" height="20px" />
+											</div>
+											<p>
+												Actual Genesis NFT is revealed and redeemed on Oct. 29th (redemption
+												available via IRL or online).
+												<br />
+											</p>
+										</li>
+										<li>
+											<div className="membership__item-icon-container">
+												<DoneCircle width="20px" height="20px" />
+											</div>
+											<p>
+												Each Minted Genesis NFT comes with a 1-time allowlist redemption for future
+												Skeleton Steph drops.
+												<br />
+											</p>
+										</li>
+										<li>
+											<div className="membership__item-icon-container">
+												<DoneCircle width="20px" height="20px" />
+											</div>
+											<p>
+												Each minted Genesis NFT grants 1 admission to the exclusive Skeleton Steph x
+												Seker Factory&apos;s Halloween party on Oct. 29th as well as a special
+												screening / creators&apos; panel event at Seker Factory (date T.B.D.).
+												<br />
+											</p>
+										</li>
+									</ul>
 								</Grid>
-								<ul>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>
-											Access to All Factory Locations
-											<br />
-											<span className="italic">(special reservations available)</span>
-										</p>
-									</li>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>
-											Governance Rights for All Factory Locations
-											<br />
-											<span className="italic">
-												(including curation voting for IRL + metaverse)
-											</span>
-										</p>
-									</li>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>
-											Early access to NFTs
-											<br />
-											<span className="italic">(by artists from all Factory locations)</span>
-										</p>
-									</li>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>
-											Access to all IRL + Metaverse Events
-											<br />
-											<span className="italic">
-												(all Factory locations including exclusive VIP Cyber Galas)
-											</span>
-										</p>
-									</li>
-									<li>
-										<div className="membership__item-icon-container">
-											<DoneCircle width="20px" height="20px" />
-										</div>
-										<p>
-											Level Boost Starting at 1
-											<br />
-											<span className="italic">(early patron / supporter perk)</span>
-										</p>
-									</li>
-									<a
-										href="https://sekerfactory.medium.com/power-over-9000-level-your-seker-factory-dao-nft-889bd6cd5577"
-										target="_blank"
-										rel="noreferrer noopener"
-									>
-										<Button variant="link">Learn More</Button>
-									</a>
-								</ul>
 							</Grid>
 						</Grid>
 					</Grid>

@@ -13,13 +13,12 @@ const About: FunctionComponent = () => (
 			<Grid row className="about__top">
 				<Grid row>
 					<Grid size={2} xs={12} sm={12} lg={12} className="about__header" />
-					<Grid size={4} xs={12} sm={12} lg={12} className="about__subheader">
+					<Grid size={8} xs={12} sm={12} lg={12} className="about__subheader">
 						<h3>
-							A DAO for creators.
+							Skeleton Steph
 							<br />
-							Come for the vibes.
+							An Animated Punk Rock Adventure!
 							<br />
-							Stay for the revolution.
 						</h3>
 					</Grid>
 				</Grid>
@@ -27,13 +26,7 @@ const About: FunctionComponent = () => (
 					<Grid size={2} xs={12} sm={12} lg={12} />
 					<Grid size={4} xs={12} sm={12} lg={12} className="about__col about__col--no-left-gutters">
 						<ul>
-							<li>
-								<div className="about__col-perk-icon">
-									<StarIcon width="20px" height="20px" />
-								</div>
-								Are you a digital artist looking for a gallery where a DAO is the curator,
-								empowering you as the value creator and not a value extractor?
-							</li>
+							<li>Skeleton Steph is an animated serialized Adventure comedy series.</li>
 							<li>
 								<div className="about__col-perk-icon">
 									<StarIcon width="20px" height="20px" />

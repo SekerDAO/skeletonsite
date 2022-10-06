@@ -7,7 +7,7 @@
   padding: 10px;
   outline: none;
   cursor: pointer;
-  border: 1px solid $purple;
+  border: 1px solid #7BBF33;
   border-radius: 5px;
   height: 40px;
 
@@ -26,7 +26,7 @@
 
   &--primary {
     color: $white;
-    background-color: $purple;
+    background-color: #7BBF33;
   }
 
   &--primary.btn--white {

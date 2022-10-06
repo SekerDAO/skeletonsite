@@ -1,7 +1,5 @@
 import {FunctionComponent, useState} from "react"
 import Footer from "../../components/Footer"
-import Grid from "../../components/Grid"
-import SubscribeForm from "../../components/Subscribe"
 import About from "./components/About"
 import Membership from "./components/Membership"
 import Schedule from "./components/Schedule"
@@ -18,9 +16,6 @@ const HomePage: FunctionComponent<React.PropsWithChildren<unknown>> = () => {
 				{/* <Slides /> */}
 				<Membership />
 				<About />
-				<Grid container>
-					<SubscribeForm />
-				</Grid>
 			</main>
 			<Footer />
 		</>
