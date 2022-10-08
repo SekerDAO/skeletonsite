@@ -78,7 +78,8 @@
         padding: 24px;
         padding-top: 0;
         text-align: center;
-        min-height: 600px;
+        width: 100%;
+        min-height: 550px;
 
         .btn {
           width: 100%;
@@ -88,7 +89,7 @@
         img {
           margin-top: 24px;
           object-fit: cover;
-          width: 100%;
+          width: 240px;
           max-height: 100%;
         }
       }

@@ -94,7 +94,7 @@ const Membership: FunctionComponent = () => {
 								</Grid>
 							</Grid>
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">
-								<Grid className="membership__item-img-container-2">
+								<Grid className="membership__item-img-container">
 									<h3 className="membership__subheader-2">Skip the line - mint free today!</h3>
 									<ul>
 										<li>
