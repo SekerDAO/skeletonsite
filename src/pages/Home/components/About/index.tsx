@@ -107,14 +107,14 @@ const About: FunctionComponent = () => (
 					<Grid size={2} xs={12} sm={12} lg={12} className="about__col">
 						<div className="contact">
 							<Button variant="secondary" color="white">
-								<a href="https://discord.gg/rju5QnZmpM" target="_blank" rel="noopener noreferrer">
+								<a href="https://discord.gg/mHysqPTMJ3" target="_blank" rel="noopener noreferrer">
 									<DiscordIcon height="20px" width="20px" />
 									Join Our Discord
 								</a>
 							</Button>
 							<Button variant="secondary" color="white">
 								<a
-									href="https://twitter.com/SekerFactory"
+									href="https://twitter.com/realskellysteph"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -124,7 +124,7 @@ const About: FunctionComponent = () => (
 							</Button>
 							<Button variant="secondary" color="white">
 								<a
-									href="https://www.instagram.com/sekerfactory/"
+									href="https://www.instagram.com/realskeletonsteph/"
 									target="_blank"
 									rel="noopener noreferrer"
 								>

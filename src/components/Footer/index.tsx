@@ -13,13 +13,13 @@ const Footer: FunctionComponent<React.PropsWithChildren<unknown>> = () => (
 				<p>© 2022 Skeleton Steph</p>
 			</section>
 			<section className="footer__right">
-				<a href="https://discord.gg/rju5QnZmpM" target="_blank" rel="noreferrer">
+				<a href="https://discord.gg/mHysqPTMJ3" target="_blank" rel="noreferrer">
 					<DiscordIcon height="30px" width="26px" />
 				</a>
-				<a href="https://www.instagram.com/sekerfactory/" target="_blank" rel="noreferrer">
+				<a href="https://www.instagram.com/realskeletonsteph/" target="_blank" rel="noreferrer">
 					<InstagramIcon height="30px" width="30px" />
 				</a>
-				<a href="https://twitter.com/SekerFactory" target="_blank" rel="noreferrer">
+				<a href="https://twitter.com/realskellysteph" target="_blank" rel="noreferrer">
 					<TwitterIcon height="30px" width="37px" />
 				</a>
 				{/*<a
