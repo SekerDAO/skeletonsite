@@ -64,15 +64,19 @@ const Membership: FunctionComponent = () => {
 						</Grid>
 						<Grid size={12} xs={12} sm={12} lg={12} className="membership__description">
 							<p className="membership__description-content">
-								<span className="karla-bold">Introducing the Seker Factory Clearance Cards.</span>
-								These limited-edition NFTs represent our way of opening our factory up to patrons of
-								the Seker intergalactic metaverse community. We are calling on you to help crowd
-								source the wisdom of curation. We believe a community of art appreciators should be
-								the driving force of defining what is authentic digital art. We have written custom
-								smart contract code that lets you level up these cards over time as you participate
-								in events, add valuable contributions to the community, or simply hang out and enjoy
-								the productions. The higher your level, the more representation, merited governance
-								rights on some proposals, and rewards you have in your community.
+								Sprouting from the art of renowned street artist, Sticky Shaw as well as
+								collaborations with creative heavy hitters, Izzy Arias, Greg Cipes, Tracey Power,
+								and Pete Wentz, Skeleton Steph is taking its first steps into web3! With the drop of
+								our official Genesis Mini-Series, the team behind Skeleton Steph is employing the
+								power of Storytelling NFTs to onboard you, our amazing community, to help us
+								determine where Steph and the Krawlers go next! At the cross-section of art,
+								cartoon, music and fashion, the possibilities are endless, and we want you with us
+								every step of the way to help build the raddest adventure for all!
+								<br />
+								Can&apos;t wait to jump in? Grab a free limited edition &quot;Fanboy Pass&quot; NFT
+								to lock in an allowlist spot for the Genesis Mini-Series minting on October 15th,
+								starting at midnight (PST). The Genesis Mini-Series will be available for public
+								minting on October 16th.
 							</p>
 						</Grid>
 						<Grid row className="membership__items-container">
