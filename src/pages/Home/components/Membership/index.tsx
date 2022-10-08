@@ -103,7 +103,7 @@ const Membership: FunctionComponent = () => {
 											</div>
 											<p>
 												Lock in your minting spot for the exclusive Skeleton Steph Genesis
-												Mini-Series, which goes live Oct. 10th.
+												Mini-Series, which can be redeemed on Oct. 15th.
 												<br />
 											</p>
 										</li>
@@ -122,8 +122,7 @@ const Membership: FunctionComponent = () => {
 												<DoneCircle width="20px" height="20px" />
 											</div>
 											<p>
-												Actual Genesis NFT is revealed and redeemed on Oct. 29th (redemption
-												available via IRL or online).
+												Actual Genesis NFT is revealed on Oct. 29th.
 												<br />
 											</p>
 										</li>
