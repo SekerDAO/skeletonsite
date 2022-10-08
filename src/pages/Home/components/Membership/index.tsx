@@ -132,8 +132,8 @@ const Membership: FunctionComponent = () => {
 												<DoneCircle width="20px" height="20px" />
 											</div>
 											<p>
-												Each Minted Genesis NFT comes with a 1-time allowlist redemption for future
-												Skeleton Steph drops.
+												Each Minted Genesis NFT comes with airdrops to holders for future Skeleton
+												Steph drops.
 												<br />
 											</p>
 										</li>

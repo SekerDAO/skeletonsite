@@ -13,7 +13,7 @@ export default {
 	CLEARANCE_CARD_001_CONTRACT_ADDRESS: "0xF03c626Bc5E28fD1F1e1cDEbAE32c4b3323aCa8e",
 	TOP_CLEARANCE_CARD_CONTRACT_ADDRESS: "0xddD611f02695eBc4a2f2DcBb1553Dab1f9Cdb7dB",
 	SUPPORT_UKRAINE_CONTRACT_ADDRESS: "0xb7419c7B3ABcf81666B4eD006fa3503aA14F9588",
-	FANBOY_PASS_CONTRACT_ADDRESS: "0x365239E1fCe4FA7CC0072affF85C74c7EbBf67a8"
+	FANBOY_PASS_CONTRACT_ADDRESS: "0x7d8d00dA54cB04cF725CD466a6813aF198cE41A1"
 }
 
 const providerOptions = {
@@ -48,7 +48,7 @@ const providerOptions = {
 }
 
 export const web3Modal = new Web3Modal({
-	network: "goerli",
+	network: "mainnet",
 	cacheProvider: false,
 	providerOptions,
 	theme: "dark"

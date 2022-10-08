@@ -38,7 +38,7 @@ export const useWeb3 = (): IWeb3ContextContainer => {
 	const [address, setAddress] = useState<string | null>(null)
 
 	const infuraProvider = useRef(
-		new InfuraProvider("goerli", {
+		new InfuraProvider("mainnet", {
 			projectId: infuraConfig.INFURA_ID
 		})
 	)

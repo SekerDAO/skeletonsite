@@ -75,8 +75,8 @@ const About: FunctionComponent = () => (
 						<p>
 							Come meet the creators behind Skeleton Steph and join us for an amazing night of IRL
 							minting and reveal / redemption of the Genesis Mini-Series, live exclusive collectors
-							NFT auction, live performances by the Krawlers + seceret special guests, rockin&apos;
-							merch, libations, giveaways, and much more!.
+							NFT auction, live performances by the Krawlers + secret special guests, rockin&apos;
+							merch, libations, giveaways, and much more!
 						</p>
 						<p>
 							Want to become a custom character in the Skeleton Steph series? Show up and learn how!
