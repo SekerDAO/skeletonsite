@@ -73,6 +73,7 @@ const Membership: FunctionComponent = () => {
 								cartoon, music and fashion, the possibilities are endless, and we want you with us
 								every step of the way to help build the raddest adventure for all!
 								<br />
+								<br />
 								Can&apos;t wait to jump in? Grab a free limited edition &quot;Fanboy Pass&quot; NFT
 								to lock in an allowlist spot for the Genesis Mini-Series minting on October 15th,
 								starting at midnight (PST). The Genesis Mini-Series will be available for public
