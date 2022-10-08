@@ -56,6 +56,8 @@ const About: FunctionComponent = () => (
 							</li>
 							<h4 className="header-text">Main Title Composer</h4>
 							<li>John Feldmann</li>
+							<br />
+							<br />
 						</ul>
 					</Grid>
 					<Grid size={4} xs={12} sm={12} lg={12} className="about__col">
@@ -88,7 +90,7 @@ const About: FunctionComponent = () => (
 							<li>
 								Seker Factory DAO (DTLA)
 								<br />
-								836 S Los Angeles street
+								836 S Los Angeles Street
 								<br />
 								Los Angeles, CA 90014
 							</li>
@@ -101,6 +103,8 @@ const About: FunctionComponent = () => (
 								(1 NFT = 1 admission ticket)
 								<br />
 								Alternative admission tickets can be bought (coming soon)
+								<br />
+								<br />
 							</li>
 						</ul>
 					</Grid>
