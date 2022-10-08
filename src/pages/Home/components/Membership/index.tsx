@@ -58,7 +58,7 @@ const Membership: FunctionComponent = () => {
 							<h3>
 								Introducing the Official
 								<br />
-								Skeleton Steph Genisis Mini-Series!
+								Skeleton Steph Genesis Mini-Series!
 								<br />
 							</h3>
 						</Grid>
