@@ -1,6 +1,10 @@
 @import "../../../../assets/styles/colors.scss";
 
 .home-page {
+  .header-text {
+    color: #FD69C9;
+  }
+
   .about {
     background: transparent linear-gradient(233deg, $dark-grey 0%, #000 100%) 0% 0% no-repeat padding-box;
     padding: 88px 72px;
@@ -63,6 +67,11 @@
 
       &--no-left-gutters {
         padding-left: 0;
+      }
+
+      img {
+        max-width: 100%;
+        margin-bottom: 24px;
       }
 
       ul {

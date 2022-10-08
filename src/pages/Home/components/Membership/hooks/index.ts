@@ -1,46 +1,50 @@
 import {ethers, BigNumber} from "ethers"
 import {useState, useEffect, Dispatch, SetStateAction, useCallback, useContext} from "react"
 import ClearanceCard001 from "../../../../../abi/ClearanceCard001.json"
+import FanboyPass from "../../../../../abi/FanboyPass.json"
 import TopClearanceCard from "../../../../../abi/TopClearanceCard.json"
 import {toastSuccess} from "../../../../../components/Toast"
 import config from "../../../../../config/eth"
 import {Web3Context} from "../../../../../context"
 
 export type ClearanceCardType = "TOP" | "001" | undefined
+export type fanboyPass = "Fanboy Pass"
 type MembershipState = {
 	buyingClearanceCardType: ClearanceCardType
+	// mintingFanboyPassType: fanboyPass
 	setBuyingClearanceCardType: Dispatch<SetStateAction<ClearanceCardType>>
+	// setMintingFanboyPassType: Dispatch<SetStateAction<fanboyPass>>
 	clearanceCardMintValue: string
 	setClearanceCardMintValue: Dispatch<SetStateAction<string>>
 	onPurchaseClearanceCard: () => Promise<void>
 	onPurchaseTopClearanceCard: () => Promise<void>
+	onMintFanboyPass: () => Promise<void>
 	processingClearanceCardPurchase: boolean
-	clearanceCardTotal: number
-	topClearanceCardTotal: number
+	processingFanboyPassMint: boolean
+	// clearanceCardTotal: number
+	// topClearanceCardTotal: number
+	fanboyPassTotal: number
 }
 
 const useMembership = (): MembershipState => {
-	const {infuraProvider, purchase} = useContext(Web3Context)
+	const {infuraProvider, purchase, freeMint} = useContext(Web3Context)
 	const [processingClearanceCardPurchase, setProcessingClearanceCardPurchase] = useState(false)
+	const [processingFanboyPassMint, setProcessingFanboyPassMint] = useState(false)
 	const [clearanceCardMintValue, setClearanceCardMintValue] = useState<string>("1")
 	const [buyingClearanceCardType, setBuyingClearanceCardType] = useState<ClearanceCardType>()
-	const [clearanceCardTotal, setClearanceCardTotal] = useState(0)
-	const [topClearanceCardTotal, setTopClearanceCardTotal] = useState(0)
+	// const [mintingFanboyPassType, setMintingFanboyPassType] = useState<fanboyPass>()
+	// const [clearanceCardTotal, setClearanceCardTotal] = useState(0)
+	// const [topClearanceCardTotal, setTopClearanceCardTotal] = useState(0)
+	const [fanboyPassTotal, setFanboyPassTotal] = useState(0)
 
 	const getCardsTotal = async () => {
-		const clearanceContract = new ethers.Contract(
-			config.CLEARANCE_CARD_001_CONTRACT_ADDRESS,
-			ClearanceCard001.abi,
+		const fanboyPassContract = new ethers.Contract(
+			config.FANBOY_PASS_CONTRACT_ADDRESS,
+			FanboyPass.abi,
 			infuraProvider
 		)
-
-		const topClearanceContract = new ethers.Contract(
-			config.TOP_CLEARANCE_CARD_CONTRACT_ADDRESS,
-			TopClearanceCard.abi,
-			infuraProvider
-		)
-		setClearanceCardTotal(BigNumber.from(await clearanceContract.totalSupply()).toNumber())
-		setTopClearanceCardTotal(BigNumber.from(await topClearanceContract.totalSupply()).toNumber())
+		//const test = await fanboyPassContract.totalSupply()
+		setFanboyPassTotal(BigNumber.from(await fanboyPassContract.totalSupply()).toNumber())
 	}
 
 	const purchaseClearanceCardSuccess = async () => {
@@ -52,6 +56,15 @@ const useMembership = (): MembershipState => {
 		await getCardsTotal()
 		setBuyingClearanceCardType(undefined)
 		setProcessingClearanceCardPurchase(false)
+	}
+
+	const mintFanboyPassSuccess = async () => {
+		toastSuccess(
+			`Congratulations! You successfully minted your fanboy pass for an allowlist spot! Welcome fanboy / fangirl!`
+		)
+		await getCardsTotal()
+		// setMintingFanboyPassType(undefined)
+		setProcessingFanboyPassMint(false)
 	}
 
 	const onPurchaseClearanceCard = useCallback(async () => {
@@ -94,6 +107,24 @@ const useMembership = (): MembershipState => {
 		}
 	}, [clearanceCardMintValue, purchase])
 
+	const onMintFanboyPass = useCallback(async () => {
+		setProcessingFanboyPassMint(true)
+		try {
+			const success = await freeMint({
+				contractAddress: config.FANBOY_PASS_CONTRACT_ADDRESS,
+				abi: FanboyPass.abi
+			})
+			if (success) {
+				setTimeout(mintFanboyPassSuccess, 5000)
+			} else {
+				setProcessingFanboyPassMint(false)
+			}
+		} catch (e) {
+			console.error(e)
+			setProcessingFanboyPassMint(false)
+		}
+	}, [clearanceCardMintValue, purchase])
+
 	useEffect(() => {
 		getCardsTotal()
 	}, [])
@@ -103,11 +134,16 @@ const useMembership = (): MembershipState => {
 		setBuyingClearanceCardType,
 		onPurchaseClearanceCard,
 		onPurchaseTopClearanceCard,
+		onMintFanboyPass,
 		clearanceCardMintValue,
 		setClearanceCardMintValue,
 		processingClearanceCardPurchase,
-		clearanceCardTotal,
-		topClearanceCardTotal
+		processingFanboyPassMint,
+		// clearanceCardTotal,
+		// topClearanceCardTotal,
+		fanboyPassTotal
+		// mintingFanboyPassType,
+		// setMintingFanboyPassType
 	}
 }
 

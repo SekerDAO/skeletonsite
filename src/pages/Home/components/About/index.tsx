@@ -3,6 +3,7 @@ import {ReactComponent as DiscordIcon} from "../../../../assets/icons/discord-gr
 import {ReactComponent as IGIcon} from "../../../../assets/icons/instagram-grayscale.svg"
 import {ReactComponent as StarIcon} from "../../../../assets/icons/star.svg"
 import {ReactComponent as TwitterIcon} from "../../../../assets/icons/twitter-grayscale.svg"
+import SkeletonHeader from "../../../../assets/images/SkeletonStep_AboutSection_Header_Image.png"
 import Button from "../../../../components/Button"
 import Grid from "../../../../components/Grid"
 import "./index.scss"
@@ -26,11 +27,18 @@ const About: FunctionComponent = () => (
 					<Grid size={2} xs={12} sm={12} lg={12} />
 					<Grid size={4} xs={12} sm={12} lg={12} className="about__col about__col--no-left-gutters">
 						<ul>
-							<li>Skeleton Steph is an animated serialized Adventure comedy series.</li>
 							<li>
-								<div className="about__col-perk-icon">
-									<StarIcon width="20px" height="20px" />
-								</div>
+								Skeleton Steph is an animated serialized Adventure comedy series, inspired by the
+								artwork of renowned street artist Sticky Shaw.
+								<br />
+								<br />
+								After gigging for an eternity at The Fossil Skelderly Home, Skeleton Steph and The
+								Krawlers get a lucky break playing at the famed Down Under Club, but when their
+								momentous debut is interrupted by a mysterious fugitive covered in flesh, they band
+								together to help it escape the evil clutches of the government known as The Clutch.
+							</li>
+							<h4 className="header-text">Creators</h4>
+							<li>
 								Are you a musician looking to be discovered and you want to own and monetize your
 								music career without record labels?
 							</li>
@@ -45,6 +53,8 @@ const About: FunctionComponent = () => (
 						</ul>
 					</Grid>
 					<Grid size={4} xs={12} sm={12} lg={12} className="about__col">
+						<img src={SkeletonHeader} />
+						<br />
 						<p className="bold">
 							In the cradle of civilization Seker was known as the patron of builders, craftsmen,
 							and sacred objects. It stood at the crossroads of the physical world and the spirit

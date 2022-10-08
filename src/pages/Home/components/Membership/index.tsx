@@ -21,7 +21,10 @@ const Membership: FunctionComponent = () => {
 		clearanceCardMintValue,
 		setClearanceCardMintValue,
 		processingClearanceCardPurchase,
-		clearanceCardTotal
+		// processingFanboyPassMint,
+		// clearanceCardTotal,
+		fanboyPassTotal,
+		onMintFanboyPass
 	} = useMembership()
 
 	const {signIn} = useContext(Web3Context)
@@ -30,11 +33,15 @@ const Membership: FunctionComponent = () => {
 		<>
 			<BuyClearanceCard
 				buyingClearanceCardType={buyingClearanceCardType}
+				// mintingFanboyPassType={mintingFanboyPassType}
 				setBuyingClearanceCardType={setBuyingClearanceCardType}
+				// setMintingFanboyPassType={setMintingFanboyPassType}
 				clearanceCardMintValue={clearanceCardMintValue}
 				setClearanceCardMintValue={setClearanceCardMintValue}
 				onPurchaseClearanceCard={onPurchaseClearanceCard}
 				onPurchaseTopClearanceCard={onPurchaseTopClearanceCard}
+				// onMintFanboyPass={onMintFanboyPass}
+				// processingFanboyPassMint={processingFanboyPassMint}
 				processing={processingClearanceCardPurchase}
 			/>
 			<ImageModal
@@ -75,13 +82,11 @@ const Membership: FunctionComponent = () => {
 									<p className="membership__subheader-2">
 										<h3>Limited Skeleton Steph &quot;Fanboy Pass&quot; (Allowlist)</h3>
 									</p>
-									<p className="membership__item-minted">
-										{clearanceCardTotal} minted / 3000 total
-									</p>
+									<p className="membership__item-minted">{fanboyPassTotal} minted / 250 total</p>
 									<Button
 										onClick={async () => {
 											await signIn()
-											setBuyingClearanceCardType("001")
+											onMintFanboyPass()
 										}}
 									>
 										Mint NFT

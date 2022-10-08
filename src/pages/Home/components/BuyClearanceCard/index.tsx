@@ -22,6 +22,8 @@ const BuyClearanceCard: FunctionComponent<
 		setClearanceCardMintValue: Dispatch<SetStateAction<string>>
 		onPurchaseClearanceCard: () => Promise<void>
 		onPurchaseTopClearanceCard: () => Promise<void>
+		// onMintFanboyPass: () => Promise<void>
+		// processingFanboyPassMint: boolean
 		processing: boolean
 	}>
 > = ({
@@ -31,6 +33,8 @@ const BuyClearanceCard: FunctionComponent<
 	setClearanceCardMintValue,
 	onPurchaseClearanceCard,
 	onPurchaseTopClearanceCard,
+	// onMintFanboyPass,
+	// processingFanboyPassMint,
 	processing
 }) => {
 	const {ethBalance} = useContext(Web3Context)

@@ -24,6 +24,7 @@ interface IWeb3ContextContainer {
 		etherValueString: string
 		mintAmount: string
 	}) => Promise<boolean>
+	freeMint: (params: {contractAddress: string; abi: ethers.ContractInterface}) => Promise<boolean>
 	infuraProvider: JsonRpcProvider
 }
 
@@ -37,7 +38,7 @@ export const useWeb3 = (): IWeb3ContextContainer => {
 	const [address, setAddress] = useState<string | null>(null)
 
 	const infuraProvider = useRef(
-		new InfuraProvider("mainnet", {
+		new InfuraProvider("goerli", {
 			projectId: infuraConfig.INFURA_ID
 		})
 	)
@@ -106,11 +107,34 @@ export const useWeb3 = (): IWeb3ContextContainer => {
 		}
 	}
 
+	const freeMint = async ({
+		contractAddress,
+		abi
+	}: {
+		contractAddress: string
+		abi: ethers.ContractInterface
+	}): Promise<boolean> => {
+		const signer = await signIn()
+		const minter = await signer.getAddress()
+		const saleContract = new ethers.Contract(contractAddress, abi, signer)
+		const amount = parseInt("2")
+		const hasNFT = Number(await saleContract.balanceOf(minter))
+		if (hasNFT >= Number(amount)) {
+			toastError(`Woops! You have already minted a free pass.`)
+			return false
+		} else {
+			const tx = await saleContract.mint()
+			await tx.wait()
+			return true
+		}
+	}
+
 	return {
 		ethBalance,
 		address,
 		walletConnected,
 		purchase,
+		freeMint,
 		signIn,
 		infuraProvider: infuraProvider.current
 	}
