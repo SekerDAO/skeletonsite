@@ -29,8 +29,8 @@ const About: FunctionComponent = () => (
 							<li>
 								Skeleton Steph is an animated serialized Adventure comedy series, inspired by the
 								artwork of renowned street artist Sticky Shaw.
-								<br />
-								<br />
+							</li>
+							<li>
 								After gigging for an eternity at The Fossil Skelderly Home, Skeleton Steph and The
 								Krawlers get a lucky break playing at the famed Down Under Club, but when their
 								momentous debut is interrupted by a mysterious fugitive covered in flesh, they band
@@ -72,13 +72,13 @@ const About: FunctionComponent = () => (
 								<h4 className="header-text">Skeleton Steph x Seker Factory DAO Halloween Bash</h4>
 							</li>
 						</ul>
-						<p className="bold">
+						<p>
 							Come meet the creators behind Skeleton Steph and join us for an amazing night of IRL
 							minting and reveal / redemption of the Genesis Mini-Series, live exclusive collectors
 							NFT auction, live performances by the Krawlers + seceret special guests, rockin&apos;
 							merch, libations, giveaways, and much more!.
 						</p>
-						<p className="bold">
+						<p>
 							Want to become a custom character in the Skeleton Steph series? Show up and learn how!
 						</p>
 						<ul>

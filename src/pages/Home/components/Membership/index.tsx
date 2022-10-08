@@ -79,9 +79,9 @@ const Membership: FunctionComponent = () => {
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">
 								<Grid className="membership__item-img-container">
 									<img src={groupiePassSrc} />
-									<h3 className="membership__subheader-2">
+									<p className="membership__subheader-2">
 										Limited Skeleton Steph &quot;Fanboy Pass&quot; (Allowlist)
-									</h3>
+									</p>
 									<p className="membership__item-minted">{fanboyPassTotal} minted / 250 total</p>
 									<Button
 										onClick={async () => {
