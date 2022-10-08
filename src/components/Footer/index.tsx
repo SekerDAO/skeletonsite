@@ -11,7 +11,7 @@ const Footer: FunctionComponent<React.PropsWithChildren<unknown>> = () => (
 	<footer className="footer">
 		<Grid container className="footer__inner-container">
 			<section className="footer__left">
-				<p>© 2022 Seker Factory DAO LLC</p>
+				<p>© 2022 Skeleton Steph</p>
 			</section>
 			<section className="footer__right">
 				<a href="https://discord.gg/rju5QnZmpM" target="_blank" rel="noreferrer">

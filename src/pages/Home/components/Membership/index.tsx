@@ -79,9 +79,9 @@ const Membership: FunctionComponent = () => {
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">
 								<Grid className="membership__item-img-container">
 									<img src={groupiePassSrc} />
-									<p className="membership__subheader-2">
-										<h3>Limited Skeleton Steph &quot;Fanboy Pass&quot; (Allowlist)</h3>
-									</p>
+									<h3 className="membership__subheader-2">
+										Limited Skeleton Steph &quot;Fanboy Pass&quot; (Allowlist)
+									</h3>
 									<p className="membership__item-minted">{fanboyPassTotal} minted / 250 total</p>
 									<Button
 										onClick={async () => {
@@ -95,9 +95,7 @@ const Membership: FunctionComponent = () => {
 							</Grid>
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">
 								<Grid className="membership__item-img-container-2">
-									<p className="membership__subheader-2">
-										<h3>Skip the line - mint free today!</h3>
-									</p>
+									<h3 className="membership__subheader-2">Skip the line - mint free today!</h3>
 									<ul>
 										<li>
 											<div className="membership__item-icon-container">

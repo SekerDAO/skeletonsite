@@ -117,7 +117,7 @@ export const useWeb3 = (): IWeb3ContextContainer => {
 		const signer = await signIn()
 		const minter = await signer.getAddress()
 		const saleContract = new ethers.Contract(contractAddress, abi, signer)
-		const amount = parseInt("2")
+		const amount = parseInt("3")
 		const hasNFT = Number(await saleContract.balanceOf(minter))
 		if (hasNFT >= Number(amount)) {
 			toastError(`Woops! You have already minted a free pass.`)

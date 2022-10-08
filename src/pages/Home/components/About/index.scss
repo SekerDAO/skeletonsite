@@ -5,6 +5,10 @@
     color: #FD69C9;
   }
 
+  .close-gap {
+    margin-bottom: -44px;
+  }
+
   .about {
     background: transparent linear-gradient(233deg, $dark-grey 0%, #000 100%) 0% 0% no-repeat padding-box;
     padding: 88px 72px;
@@ -54,7 +58,7 @@
     }
 
     &__col {
-      color: $dark-grey50;
+      color: $white;
       padding-left: 12px;
       padding-right: 12px;
       margin-top: 6px;

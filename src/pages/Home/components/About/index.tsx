@@ -1,7 +1,6 @@
 import {FunctionComponent} from "react"
 import {ReactComponent as DiscordIcon} from "../../../../assets/icons/discord-grayscale.svg"
 import {ReactComponent as IGIcon} from "../../../../assets/icons/instagram-grayscale.svg"
-import {ReactComponent as StarIcon} from "../../../../assets/icons/star.svg"
 import {ReactComponent as TwitterIcon} from "../../../../assets/icons/twitter-grayscale.svg"
 import SkeletonHeader from "../../../../assets/images/SkeletonStep_AboutSection_Header_Image.png"
 import Button from "../../../../components/Button"
@@ -39,38 +38,75 @@ const About: FunctionComponent = () => (
 							</li>
 							<h4 className="header-text">Creators</h4>
 							<li>
-								Are you a musician looking to be discovered and you want to own and monetize your
-								music career without record labels?
+								Sticky Shaw
+								<br />
+								Izzy Arias
+								<br />
+								Tracey Power
+								<br />
+								Greg Cipes
 							</li>
+							<h4 className="header-text">Writers</h4>
+							<li>Izzy Arias and Tracey Power</li>
+							<h4 className="header-text">Cast</h4>
 							<li>
-								<div className="about__col-perk-icon">
-									<StarIcon width="20px" height="20px" />
-								</div>
-								Are you a patron of digital art and music ... a supporter of the creative commons
-								that wants to be involved in your favorite artists careers?{" "}
-								{`Do you have some ideas you'd like to see come to life?`}
+								Lilith Czar - Steph
+								<br />
+								Pete Wentz - Rob
+								<br />
+								Greg Cipes - Geoff
+								<br />
+								Tracey Power - Chris
 							</li>
+							<h4 className="header-text">Main Title Composer</h4>
+							<li>John Feldmann</li>
 						</ul>
 					</Grid>
 					<Grid size={4} xs={12} sm={12} lg={12} className="about__col">
-						<img src={SkeletonHeader} />
-						<br />
+						<ul>
+							<li>
+								<img src={SkeletonHeader} />
+							</li>
+							<li className="close-gap">You&apos;re Invited!</li>
+							<li>
+								<h4 className="header-text">Skeleton Steph x Seker Factory DAO Halloween Bash</h4>
+							</li>
+						</ul>
 						<p className="bold">
-							In the cradle of civilization Seker was known as the patron of builders, craftsmen,
-							and sacred objects. It stood at the crossroads of the physical world and the spirit
-							world. Today, Seker Factory DAO is a bridge between our tangible reality, web3, and
-							the metaverse where creators gather to connect, learn, and build together. Through an
-							autonomous community utilizing blockchain tech, members collectively own a commons to
-							shape seasonal physical / digital experiences that can only happen at Seker Factory.
+							Come meet the creators behind Skeleton Steph and join us for an amazing night of IRL
+							minting and reveal / redemption of the Genesis Mini-Series, live exclusive collectors
+							NFT auction, live performances by the Krawlers + seceret special guests, rockin&apos;
+							merch, libations, giveaways, and much more!.
 						</p>
-						<a
-							className="learn-more-link"
-							href="https://sekerfactory.medium.com/welcome-to-seker-factory-dao-c9cb3cfc9d3"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Learn More
-						</a>
+						<p className="bold">
+							Want to become a custom character in the Skeleton Steph series? Show up and learn how!
+						</p>
+						<ul>
+							<h4 className="header-text">Date</h4>
+							<li>
+								Saturday | October 29th, 2022
+								<br />
+								8PM - 2AM (doors open at 7:30PM)
+							</li>
+							<h4 className="header-text">Location</h4>
+							<li>
+								Seker Factory DAO (DTLA)
+								<br />
+								836 S Los Angeles street
+								<br />
+								Los Angeles, CA 90014
+							</li>
+							<h4 className="header-text">Admission</h4>
+							<li>
+								Skeleton Steph Genesis Mini-Series NFT Holders
+								<br />
+								Seker Factory DAO Clearance Card Holders
+								<br />
+								(1 NFT = 1 admission ticket)
+								<br />
+								Alternative admission tickets can be bought (coming soon)
+							</li>
+						</ul>
 					</Grid>
 					<Grid size={2} xs={12} sm={12} lg={12} className="about__col">
 						<div className="contact">
