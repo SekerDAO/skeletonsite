@@ -70,11 +70,11 @@ const Membership: FunctionComponent = () => {
 								our official Genesis Mini-Series, the team behind Skeleton Steph is employing the
 								power of Storytelling NFTs to onboard you, our amazing community, to help us
 								determine where Steph and the Krawlers go next! At the cross-section of art,
-								cartoon, music and fashion, the possibilities are endless, and we want you with us
+								cartoon, music, and fashion, the possibilities are endless, and we want you with us
 								every step of the way to help build the raddest adventure for all!
 								<br />
 								<br />
-								Can&apos;t wait to jump in? Grab a free limited edition &quot;Fanboy Pass&quot; NFT
+								Can&apos;t wait to jump in? Grab a free limited-edition &quot;Fanboy Pass&quot; NFT
 								to lock in an allowlist spot for the Genesis Mini-Series minting on October 15th,
 								starting at midnight (PST). The Genesis Mini-Series will be available for public
 								minting on October 16th.

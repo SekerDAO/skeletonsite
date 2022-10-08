@@ -27,10 +27,6 @@ const About: FunctionComponent = () => (
 					<Grid size={4} xs={12} sm={12} lg={12} className="about__col about__col--no-left-gutters">
 						<ul>
 							<li>
-								Skeleton Steph is an animated serialized Adventure comedy series, inspired by the
-								artwork of renowned street artist Sticky Shaw.
-							</li>
-							<li>
 								After gigging for an eternity at The Fossil Skelderly Home, Skeleton Steph and The
 								Krawlers get a lucky break playing at the famed Down Under Club, but when their
 								momentous debut is interrupted by a mysterious fugitive covered in flesh, they band
