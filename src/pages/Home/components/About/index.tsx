@@ -55,7 +55,13 @@ const About: FunctionComponent = () => (
 								Tracey Power - Chris
 							</li>
 							<h4 className="header-text">Main Title Composer</h4>
-							<li>Sticky Shaw John Feldmann Sky Stern</li>
+							<li>
+								Sticky Shaw
+								<br />
+								John Feldmann
+								<br />
+								Sky Stern
+							</li>
 							<br />
 							<br />
 						</ul>
