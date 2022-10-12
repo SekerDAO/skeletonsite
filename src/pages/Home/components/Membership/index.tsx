@@ -90,18 +90,20 @@ const Membership: FunctionComponent = () => {
 										Limited Skeleton Steph &quot;Fanboy Pass&quot; (Allowlist)
 									</p>
 									<p className="membership__item-minted">{fanboyPassTotal} minted / 251 total</p>
-									<Button
-										onClick={async () => {
-											{
-												/* await signIn() */
-											}
-											{
-												/* onMintFanboyPass() */
-											}
-										}}
-									>
-										Free Mint (Fully Claimed)
-									</Button>
+									<a href="https://opensea.io/collection/skeleton-steph-fanboy-pass">
+										<Button
+											onClick={async () => {
+												{
+													/* await signIn() */
+												}
+												{
+													/* onMintFanboyPass() */
+												}
+											}}
+										>
+											Free Mint (Fully Claimed)
+										</Button>
+									</a>
 									<img src={Opensea} className="membership__item-img-container-opensea" />
 									<p>
 										<a href="https://opensea.io/collection/skeleton-steph-fanboy-pass">
