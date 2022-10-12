@@ -1,11 +1,12 @@
-import {FunctionComponent, useContext, useState} from "react"
+// import {FunctionComponent, useContext, useState} from "react"
+import {FunctionComponent, useState} from "react"
 import {ReactComponent as DoneCircle} from "../../../../assets/icons/done-circle.svg"
 //import clearanceCardOneSrc from "../../../../assets/videos/Clearence_Card_00.mp4"
 import groupiePassSrc from "../../../../assets/images/SkeletonSteph_Site_FanboyPass.png"
 import Button from "../../../../components/Button"
 import Grid from "../../../../components/Grid"
 import ImageModal from "../../../../components/Modal/ImageModal"
-import {Web3Context} from "../../../../context"
+// import {Web3Context} from "../../../../context"
 import BuyClearanceCard from "../BuyClearanceCard"
 import useMembership from "./hooks"
 import "./index.scss"
@@ -23,11 +24,11 @@ const Membership: FunctionComponent = () => {
 		processingClearanceCardPurchase,
 		// processingFanboyPassMint,
 		// clearanceCardTotal,
-		fanboyPassTotal,
-		onMintFanboyPass
+		fanboyPassTotal
+		// onMintFanboyPass
 	} = useMembership()
 
-	const {signIn} = useContext(Web3Context)
+	// const {signIn} = useContext(Web3Context)
 
 	return (
 		<>
@@ -87,14 +88,18 @@ const Membership: FunctionComponent = () => {
 									<p className="membership__subheader-2">
 										Limited Skeleton Steph &quot;Fanboy Pass&quot; (Allowlist)
 									</p>
-									<p className="membership__item-minted">{fanboyPassTotal} minted / 250 total</p>
+									<p className="membership__item-minted">{fanboyPassTotal} minted / 251 total</p>
 									<Button
 										onClick={async () => {
-											await signIn()
-											onMintFanboyPass()
+											{
+												/* await signIn() */
+											}
+											{
+												/* onMintFanboyPass() */
+											}
 										}}
 									>
-										Mint NFT
+										Free Mint (Fully Claimed)
 									</Button>
 								</Grid>
 							</Grid>
