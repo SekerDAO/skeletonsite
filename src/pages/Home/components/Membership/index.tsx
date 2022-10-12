@@ -105,7 +105,7 @@ const Membership: FunctionComponent = () => {
 									<img src={Opensea} className="membership__item-img-container-opensea" />
 									<p>
 										<a href="https://opensea.io/collection/skeleton-steph-fanboy-pass">
-											Purchase A Fanboy Pass on Opensea
+											Purchase a &quot;Fanboy Pass&quot; Allowlist NFT on OpenSea
 										</a>
 									</p>
 								</Grid>
