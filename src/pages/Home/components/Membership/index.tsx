@@ -1,6 +1,7 @@
 // import {FunctionComponent, useContext, useState} from "react"
 import {FunctionComponent, useState} from "react"
 import {ReactComponent as DoneCircle} from "../../../../assets/icons/done-circle.svg"
+import Opensea from "../../../../assets/icons/opensea_logo.png"
 //import clearanceCardOneSrc from "../../../../assets/videos/Clearence_Card_00.mp4"
 import groupiePassSrc from "../../../../assets/images/SkeletonSteph_Site_FanboyPass.png"
 import Button from "../../../../components/Button"
@@ -84,7 +85,7 @@ const Membership: FunctionComponent = () => {
 						<Grid row className="membership__items-container">
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">
 								<Grid className="membership__item-img-container">
-									<img src={groupiePassSrc} />
+									<img src={groupiePassSrc} className="membership__item-img-container-steph_img" />
 									<p className="membership__subheader-2">
 										Limited Skeleton Steph &quot;Fanboy Pass&quot; (Allowlist)
 									</p>
@@ -101,6 +102,12 @@ const Membership: FunctionComponent = () => {
 									>
 										Free Mint (Fully Claimed)
 									</Button>
+									<img src={Opensea} className="membership__item-img-container-opensea" />
+									<p>
+										<a href="https://opensea.io/collection/skeleton-steph-fanboy-pass">
+											Purchase A Fanboy Pass on Opensea
+										</a>
+									</p>
 								</Grid>
 							</Grid>
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">

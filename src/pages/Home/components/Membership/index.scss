@@ -42,7 +42,7 @@
 
     &__subheader-2 {
       font-family: 'Caveat-Bold', cursive;
-      margin-top: 44px;
+      margin-top: 24px;
     }
 
     &__description {
@@ -79,18 +79,23 @@
         padding-top: 0;
         text-align: center;
         width: 100%;
-        min-height: 630px;
+        min-height: 660px;
 
         .btn {
           width: 100%;
           margin-top: 24px;
         }
 
-        img {
-          margin-top: 44px;
+        &-steph_img {
+          margin-top: 34px;
           object-fit: cover;
           width: 260px;
           max-height: 100%;
+        }
+
+        &-opensea {
+          width: 30px;
+          margin-top: 24px;
         }
       }
 
