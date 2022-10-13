@@ -61,6 +61,8 @@ const About: FunctionComponent = () => (
 								John Feldmann
 								<br />
 								Sky Stern
+								<br />
+								Greg Cipes
 							</li>
 							<br />
 							<br />
