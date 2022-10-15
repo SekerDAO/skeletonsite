@@ -11,47 +11,64 @@ export type ClearanceCardType = "TOP" | "001" | undefined
 export type fanboyPass = "Fanboy Pass"
 type MembershipState = {
 	buyingClearanceCardType: ClearanceCardType
-	// mintingFanboyPassType: fanboyPass
 	setBuyingClearanceCardType: Dispatch<SetStateAction<ClearanceCardType>>
-	// setMintingFanboyPassType: Dispatch<SetStateAction<fanboyPass>>
 	clearanceCardMintValue: string
+	clearanceCardIDsMintValue: string
 	setClearanceCardMintValue: Dispatch<SetStateAction<string>>
+	setClearanceCardIDsMintValue: Dispatch<SetStateAction<string>>
 	onPurchaseClearanceCard: () => Promise<void>
 	onPurchaseTopClearanceCard: () => Promise<void>
 	onMintFanboyPass: () => Promise<void>
 	processingClearanceCardPurchase: boolean
 	processingFanboyPassMint: boolean
-	// clearanceCardTotal: number
+	clearanceCardTotal: number
 	// topClearanceCardTotal: number
-	fanboyPassTotal: number
+	// fanboyPassTotal: number
 }
 
 const useMembership = (): MembershipState => {
-	const {infuraProvider, purchase, freeMint} = useContext(Web3Context)
+	const {infuraProvider, purchase, purchaseAllowlist, freeMint} = useContext(Web3Context)
 	const [processingClearanceCardPurchase, setProcessingClearanceCardPurchase] = useState(false)
 	const [processingFanboyPassMint, setProcessingFanboyPassMint] = useState(false)
-	const [clearanceCardMintValue, setClearanceCardMintValue] = useState<string>("1")
+	const [clearanceCardMintValue, setClearanceCardMintValue] = useState<string>("")
+	const [clearanceCardIDsMintValue, setClearanceCardIDsMintValue] = useState<string>("1,2,3")
 	const [buyingClearanceCardType, setBuyingClearanceCardType] = useState<ClearanceCardType>()
 	// const [mintingFanboyPassType, setMintingFanboyPassType] = useState<fanboyPass>()
-	// const [clearanceCardTotal, setClearanceCardTotal] = useState(0)
+	const [clearanceCardTotal, setClearanceCardTotal] = useState(0)
 	// const [topClearanceCardTotal, setTopClearanceCardTotal] = useState(0)
-	const [fanboyPassTotal, setFanboyPassTotal] = useState(0)
+	// const [fanboyPassTotal, setFanboyPassTotal] = useState(0)
+
+	// const getCardsTotal = async () => {
+	// 	const fanboyPassContract = new ethers.Contract(
+	// 		config.FANBOY_PASS_CONTRACT_ADDRESS,
+	// 		FanboyPass.abi,
+	// 		infuraProvider
+	// 	)
+	// 	//const test = await fanboyPassContract.totalSupply()
+	// 	setFanboyPassTotal(BigNumber.from(await fanboyPassContract.totalSupply()).toNumber())
+	// }
 
 	const getCardsTotal = async () => {
-		const fanboyPassContract = new ethers.Contract(
-			config.FANBOY_PASS_CONTRACT_ADDRESS,
-			FanboyPass.abi,
+		const clearanceContract = new ethers.Contract(
+			config.CLEARANCE_CARD_001_CONTRACT_ADDRESS,
+			ClearanceCard001.abi,
 			infuraProvider
 		)
-		//const test = await fanboyPassContract.totalSupply()
-		setFanboyPassTotal(BigNumber.from(await fanboyPassContract.totalSupply()).toNumber())
+
+		// const topClearanceContract = new ethers.Contract(
+		// 	config.TOP_CLEARANCE_CARD_CONTRACT_ADDRESS,
+		// 	TopClearanceCard.abi,
+		// 	infuraProvider
+		// )
+		setClearanceCardTotal(BigNumber.from(await clearanceContract.totalSupply()).toNumber())
+		// setTopClearanceCardTotal(BigNumber.from(await topClearanceContract.totalSupply()).toNumber())
 	}
 
 	const purchaseClearanceCardSuccess = async () => {
 		toastSuccess(
 			`Congratulations! You successfully bought ${
-				buyingClearanceCardType === "001" ? "001 Clearance Card" : "Top Clearance Card"
-			}. Welcome to the Seker Factory family, dear friend :)`
+				buyingClearanceCardType === "001" ? "Skeleton Steph Genesis Series" : "Top Clearance Card"
+			}. Welcome to the Krawler family, dear friend :)`
 		)
 		await getCardsTotal()
 		setBuyingClearanceCardType(undefined)
@@ -68,18 +85,22 @@ const useMembership = (): MembershipState => {
 	}
 
 	const onPurchaseClearanceCard = useCallback(async () => {
+		console.log(clearanceCardIDsMintValue)
 		setProcessingClearanceCardPurchase(true)
 		try {
-			const success = await purchase({
+			const success = await purchaseAllowlist({
 				contractAddress: config.CLEARANCE_CARD_001_CONTRACT_ADDRESS,
 				abi: ClearanceCard001.abi,
-				etherValueString: "0.15",
+				etherValueString: "0.076",
+				IDs: clearanceCardIDsMintValue,
 				mintAmount: clearanceCardMintValue
 			})
 			if (success) {
 				setTimeout(purchaseClearanceCardSuccess, 5000)
 			} else {
 				setProcessingClearanceCardPurchase(false)
+				setClearanceCardMintValue("")
+				setClearanceCardIDsMintValue("")
 			}
 		} catch (e) {
 			console.error(e)
@@ -136,12 +157,14 @@ const useMembership = (): MembershipState => {
 		onPurchaseTopClearanceCard,
 		onMintFanboyPass,
 		clearanceCardMintValue,
+		clearanceCardIDsMintValue,
 		setClearanceCardMintValue,
+		setClearanceCardIDsMintValue,
 		processingClearanceCardPurchase,
 		processingFanboyPassMint,
-		// clearanceCardTotal,
-		// topClearanceCardTotal,
-		fanboyPassTotal
+		clearanceCardTotal
+		// topClearanceCardTotal
+		// fanboyPassTotal
 		// mintingFanboyPassType,
 		// setMintingFanboyPassType
 	}
