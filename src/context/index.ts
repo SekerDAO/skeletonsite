@@ -45,7 +45,7 @@ export const useWeb3 = (): IWeb3ContextContainer => {
 	const [address, setAddress] = useState<string | null>(null)
 
 	const infuraProvider = useRef(
-		new InfuraProvider("goerli", {
+		new InfuraProvider("mainnet", {
 			projectId: infuraConfig.INFURA_ID
 		})
 	)
@@ -134,28 +134,21 @@ export const useWeb3 = (): IWeb3ContextContainer => {
 		const value = etherValue.mul(amount)
 		const ethAmount = formatEther(value.toString())
 		const _ethBalance = Number(formatEther(await signer.getBalance()))
-		console.log(IDs)
 		const splitIDs = IDs.split(",")
 		const parsedIDs = splitIDs.map(idItem => parseInt(idItem))
-		console.log(splitIDs)
-		console.log(parsedIDs)
-		//const test = [parseInt("0"), parseInt("1"), parseInt("2")]
 		if (Number(ethAmount) > _ethBalance) {
 			toastError(
 				`Woops! You don't have enough ETH in your wallet. Your balance: ${_ethBalance} ETH, you need at least ${ethAmount} ETH.`
 			)
 			return false
 		} else {
-			// const tx = await saleContract.allowlistMint(amount, test, {value})
-			// await tx.wait()
-			// return true
 			try {
 				const tx = await saleContract.allowlistMint(amount, parsedIDs, {value})
 				await tx.wait()
 				return true
 			} catch (err) {
-				console.log(err.message) // prints ethers error message containing the json rpc response as it is (along with error stacks from node if sent)
-				console.log(err.error.message) // short and sweet error message
+				// console.log(err.message) // prints ethers error message containing the json rpc response as it is (along with error stacks from node if sent)
+				// console.log(err.error.message) // short and sweet error message
 				toastError(`Woops! The mint failed with message: ${err.error.message}`)
 				return false
 			}

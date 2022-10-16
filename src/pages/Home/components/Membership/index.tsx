@@ -79,10 +79,14 @@ const Membership: FunctionComponent = () => {
 								every step of the way to help build the raddest adventure for all!
 								<br />
 								<br />
-								Can&apos;t wait to jump in? Grab a free limited-edition &quot;Fanboy Pass&quot; NFT
-								to lock in an allowlist spot for the Genesis Mini-Series minting on October 15th,
-								starting at midnight (PST). The Genesis Mini-Series will be available for public
-								minting on October 16th.
+								Can&apos;t wait to jump in and be an early supporter? Grab your Genesis Character
+								NFT today and get the opportunity to have your amazing ideas guide our creators in
+								telling this one-of-a-kind story. Want to know how you can potentially be an actual
+								character on the show? Each NFT grants you access to the private channels in our
+								Discord where you can reach out to our team and learn how! We will be revealing
+								elements of your Genesis Character up until Oct 29th for the final full reveal, live
+								at Seker Factory DAO in Downtown Los Angeles. Stay tuned! You may very well be one
+								of the lucky ones to mint an ultra-rare Skelly!
 							</p>
 						</Grid>
 						<Grid row className="membership__items-container">
@@ -90,7 +94,7 @@ const Membership: FunctionComponent = () => {
 								<Grid className="membership__item-img-container">
 									<img src={groupiePassSrc} className="membership__item-img-container-steph_img" />
 									<p className="membership__subheader-2">
-										Limited Skeleton Steph &quot;Fanboy Pass&quot; (Allowlist)
+										Limited Skeleton Steph &quot;Genesis Series&quot; (Allowlist)
 									</p>
 									<p className="membership__item-minted">
 										{clearanceCardTotal} minted / 2100 total
@@ -106,32 +110,22 @@ const Membership: FunctionComponent = () => {
 									<img src={Opensea} className="membership__item-img-container-opensea" />
 									<p>
 										<a href="https://opensea.io/collection/skeleton-steph-fanboy-pass">
-											Purchase a &quot;Fanboy Pass&quot; Allowlist NFT on OpenSea
+											Purchase an unclaimed &quot;Fanboy Pass&quot; Allowlist NFT on OpenSea
 										</a>
 									</p>
 								</Grid>
 							</Grid>
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">
 								<Grid className="membership__item-img-container">
-									<h3 className="membership__subheader-2">Skip the line - mint free today!</h3>
+									<h3 className="membership__subheader-2">Join the Skeleton Steph Story!</h3>
 									<ul>
 										<li>
 											<div className="membership__item-icon-container">
 												<DoneCircle width="20px" height="20px" />
 											</div>
 											<p>
-												Lock in your minting spot for the exclusive Skeleton Steph Genesis
-												Mini-Series, which can be redeemed on Oct. 15th.
-												<br />
-											</p>
-										</li>
-										<li>
-											<div className="membership__item-icon-container">
-												<DoneCircle width="20px" height="20px" />
-											</div>
-											<p>
 												Genesis series includes variations of 7 Skeleton Steph characters, with
-												potential rarity features!
+												rarity features!
 												<br />
 											</p>
 										</li>
@@ -140,7 +134,10 @@ const Membership: FunctionComponent = () => {
 												<DoneCircle width="20px" height="20px" />
 											</div>
 											<p>
-												Actual Genesis NFT is revealed on Oct. 29th.
+												Full Genesis NFT is revealed on Oct. 29th at the Seker Factory DAO but we
+												will be slowly unveiling portions of your minted character based on the
+												support received in the sale. At 25%, 50%, and 75% we will unveil a bit more
+												of your trait visuals.
 												<br />
 											</p>
 										</li>

@@ -85,7 +85,6 @@ const useMembership = (): MembershipState => {
 	}
 
 	const onPurchaseClearanceCard = useCallback(async () => {
-		console.log(clearanceCardIDsMintValue)
 		setProcessingClearanceCardPurchase(true)
 		try {
 			const success = await purchaseAllowlist({

@@ -10,7 +10,7 @@ import Web3Modal from "web3modal"
 import infuraConfig from "./infura"
 
 export default {
-	CLEARANCE_CARD_001_CONTRACT_ADDRESS: "0xDD31cA312804d0ac4B34BdE0759b1bfdB9f9345b",
+	CLEARANCE_CARD_001_CONTRACT_ADDRESS: "0xbfEbE8591E7A0ABB585BF7101b3149283dcf66A4",
 	TOP_CLEARANCE_CARD_CONTRACT_ADDRESS: "0xddD611f02695eBc4a2f2DcBb1553Dab1f9Cdb7dB",
 	SUPPORT_UKRAINE_CONTRACT_ADDRESS: "0xb7419c7B3ABcf81666B4eD006fa3503aA14F9588",
 	FANBOY_PASS_CONTRACT_ADDRESS: "0x7d8d00dA54cB04cF725CD466a6813aF198cE41A1"
@@ -48,7 +48,7 @@ const providerOptions = {
 }
 
 export const web3Modal = new Web3Modal({
-	network: "goerli",
+	network: "mainnet",
 	cacheProvider: false,
 	providerOptions,
 	theme: "dark"

@@ -66,7 +66,7 @@ const BuyClearanceCard: FunctionComponent<
 					value={clearanceCardIDsMintValue}
 					onChange={event => setClearanceCardIDsMintValue(event.target.value)}
 				/>
-				<label>Amount</label>
+				<label>Amount of NFTs to claim</label>
 				<Input
 					min={1}
 					step={1}
