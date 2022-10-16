@@ -19,29 +19,29 @@ const BuyClearanceCard: FunctionComponent<
 		buyingClearanceCardType: "TOP" | "001" | undefined
 		setBuyingClearanceCardType: Dispatch<SetStateAction<ClearanceCardType>>
 		clearanceCardMintValue: string
+		clearanceCardIDsMintValue: string
 		setClearanceCardMintValue: Dispatch<SetStateAction<string>>
+		setClearanceCardIDsMintValue: Dispatch<SetStateAction<string>>
 		onPurchaseClearanceCard: () => Promise<void>
 		onPurchaseTopClearanceCard: () => Promise<void>
-		// onMintFanboyPass: () => Promise<void>
-		// processingFanboyPassMint: boolean
 		processing: boolean
 	}>
 > = ({
 	buyingClearanceCardType,
 	setBuyingClearanceCardType,
 	clearanceCardMintValue,
+	clearanceCardIDsMintValue,
 	setClearanceCardMintValue,
+	setClearanceCardIDsMintValue,
 	onPurchaseClearanceCard,
 	onPurchaseTopClearanceCard,
-	// onMintFanboyPass,
-	// processingFanboyPassMint,
 	processing
 }) => {
 	const {ethBalance} = useContext(Web3Context)
 	const isTopCard = buyingClearanceCardType === "TOP"
-	const title = isTopCard ? "Top Clearance Cards" : "001 Clearance Cards"
+	// const title = isTopCard ? "Top Clearance Cards" : "001 Clearance Cards"
 	const clearanceCardIntValue = parseInt(clearanceCardMintValue)
-	const transactionTotal = clearanceCardIntValue * (isTopCard ? 0.5 : 0.15)
+	const transactionTotal = clearanceCardIntValue * (isTopCard ? 0.5 : 0.076)
 
 	const handleClose = () => {
 		setBuyingClearanceCardType(undefined)
@@ -57,8 +57,16 @@ const BuyClearanceCard: FunctionComponent<
 	return (
 		<Modal open={!!buyingClearanceCardType} onClose={handleClose}>
 			<form className="buy-clearance-card" onSubmit={handleSubmit}>
-				<h2>Buy ({title})</h2>
-				<label>Amount</label>
+				<h2>Buy Genesis NFT</h2>
+				<label>Enter Fanboy Pass Token IDs (Comma seperated e.g. 1,2,3)</label>
+				<Input
+					name="IDs"
+					type="text"
+					required
+					value={clearanceCardIDsMintValue}
+					onChange={event => setClearanceCardIDsMintValue(event.target.value)}
+				/>
+				<label>Amount of NFTs to claim</label>
 				<Input
 					min={1}
 					step={1}
@@ -68,8 +76,8 @@ const BuyClearanceCard: FunctionComponent<
 					value={clearanceCardMintValue}
 					onChange={event => setClearanceCardMintValue(event.target.value)}
 				/>
-				<Copy>Price per item: {isTopCard ? 0.5 : 0.15} (ETH)</Copy>
-				<Copy>Total: {transactionTotal} (ETH)</Copy>
+				<Copy>Price per item: {isTopCard ? 0.5 : 0.076} (ETH)</Copy>
+				<Copy>Total: {isNaN(transactionTotal) ? 0 : transactionTotal} (ETH)</Copy>
 				{ethBalance < transactionTotal && (
 					<p className="buy-clearance-card__helper-text">
 						{`You don't have enough ETH in your wallet. Your balance is: ${ethBalance.toFixed(

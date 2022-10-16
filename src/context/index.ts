@@ -24,6 +24,13 @@ interface IWeb3ContextContainer {
 		etherValueString: string
 		mintAmount: string
 	}) => Promise<boolean>
+	purchaseAllowlist: (params: {
+		contractAddress: string
+		abi: ethers.ContractInterface
+		etherValueString: string
+		IDs: string
+		mintAmount: string
+	}) => Promise<boolean>
 	freeMint: (params: {contractAddress: string; abi: ethers.ContractInterface}) => Promise<boolean>
 	infuraProvider: JsonRpcProvider
 }
@@ -107,6 +114,47 @@ export const useWeb3 = (): IWeb3ContextContainer => {
 		}
 	}
 
+	const purchaseAllowlist = async ({
+		contractAddress,
+		abi,
+		etherValueString,
+		IDs,
+		mintAmount
+	}: {
+		contractAddress: string
+		abi: ethers.ContractInterface
+		etherValueString: string
+		IDs: string
+		mintAmount: string
+	}): Promise<boolean> => {
+		const signer = await signIn()
+		const saleContract = new ethers.Contract(contractAddress, abi, signer)
+		const etherValue = ethers.utils.parseEther(etherValueString)
+		const amount = parseInt(mintAmount)
+		const value = etherValue.mul(amount)
+		const ethAmount = formatEther(value.toString())
+		const _ethBalance = Number(formatEther(await signer.getBalance()))
+		const splitIDs = IDs.split(",")
+		const parsedIDs = splitIDs.map(idItem => parseInt(idItem))
+		if (Number(ethAmount) > _ethBalance) {
+			toastError(
+				`Woops! You don't have enough ETH in your wallet. Your balance: ${_ethBalance} ETH, you need at least ${ethAmount} ETH.`
+			)
+			return false
+		} else {
+			try {
+				const tx = await saleContract.allowlistMint(amount, parsedIDs, {value})
+				await tx.wait()
+				return true
+			} catch (err) {
+				// console.log(err.message) // prints ethers error message containing the json rpc response as it is (along with error stacks from node if sent)
+				// console.log(err.error.message) // short and sweet error message
+				toastError(`Woops! The mint failed with message: ${err.error.message}`)
+				return false
+			}
+		}
+	}
+
 	const freeMint = async ({
 		contractAddress,
 		abi
@@ -134,6 +182,7 @@ export const useWeb3 = (): IWeb3ContextContainer => {
 		address,
 		walletConnected,
 		purchase,
+		purchaseAllowlist,
 		freeMint,
 		signIn,
 		infuraProvider: infuraProvider.current
