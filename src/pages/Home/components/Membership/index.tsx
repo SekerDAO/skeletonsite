@@ -2,7 +2,7 @@
 import {FunctionComponent, useContext, useState} from "react"
 import {ReactComponent as DoneCircle} from "../../../../assets/icons/done-circle.svg"
 import Opensea from "../../../../assets/icons/opensea_logo.png"
-import groupiePassSrc from "../../../../assets/images/SkeletonSteph_Site_FanboyPass.png"
+import groupiePassSrc from "../../../../assets/images/SkeletonSteph_Genesis_Blindbox.png"
 import Button from "../../../../components/Button"
 import Grid from "../../../../components/Grid"
 import ImageModal from "../../../../components/Modal/ImageModal"
@@ -124,8 +124,7 @@ const Membership: FunctionComponent = () => {
 												<DoneCircle width="20px" height="20px" />
 											</div>
 											<p>
-												Genesis series includes variations of 7 Skeleton Steph characters, with
-												rarity features!
+												Become one of the first to join the official Skeleton Steph community!
 												<br />
 											</p>
 										</li>
@@ -134,10 +133,8 @@ const Membership: FunctionComponent = () => {
 												<DoneCircle width="20px" height="20px" />
 											</div>
 											<p>
-												Full Genesis NFT is revealed on Oct. 29th at the Seker Factory DAO but we
-												will be slowly unveiling portions of your minted character based on the
-												support received in the sale. At 25%, 50%, and 75% we will unveil a bit more
-												of your trait visuals.
+												The Genesis Mini-Series includes variations of 7 Skeleton Steph characters,
+												with rarity features!
 												<br />
 											</p>
 										</li>
@@ -146,8 +143,9 @@ const Membership: FunctionComponent = () => {
 												<DoneCircle width="20px" height="20px" />
 											</div>
 											<p>
-												Each Minted Genesis NFT comes with airdrops to holders for future Skeleton
-												Steph drops.
+												At 25%, 50%, and 75% of the total supply minted, you will get to see a bit
+												more of your Characters attributes! All minted NFTs will be fully unveiled
+												on Oct. 29th.
 												<br />
 											</p>
 										</li>
@@ -156,9 +154,19 @@ const Membership: FunctionComponent = () => {
 												<DoneCircle width="20px" height="20px" />
 											</div>
 											<p>
-												Each minted Genesis NFT grants 1 admission to the exclusive Skeleton Steph x
-												Seker Factory&apos;s Halloween party on Oct. 29th as well as a special
-												screening / creators&apos; panel event at Seker Factory (date T.B.D.).
+												Each minted NFT comes with airdrops to holders for future Skeleton Steph
+												drops.
+												<br />
+											</p>
+										</li>
+										<li>
+											<div className="membership__item-icon-container">
+												<DoneCircle width="20px" height="20px" />
+											</div>
+											<p>
+												Each minted NFT grants 1 admission to the exclusive Skeleton Steph x Seker
+												Factorys Halloween party on Oct. 29th as well as a special screening /
+												creators panel event at Seker Factory (date T.B.D.).
 												<br />
 											</p>
 										</li>
