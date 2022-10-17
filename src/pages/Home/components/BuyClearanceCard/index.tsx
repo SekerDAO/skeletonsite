@@ -21,7 +21,6 @@ const BuyClearanceCard: FunctionComponent<
 		clearanceCardMintValue: string
 		clearanceCardIDsMintValue: string
 		setClearanceCardMintValue: Dispatch<SetStateAction<string>>
-		setClearanceCardIDsMintValue: Dispatch<SetStateAction<string>>
 		onPurchaseClearanceCard: () => Promise<void>
 		onPurchaseTopClearanceCard: () => Promise<void>
 		processing: boolean
@@ -30,9 +29,7 @@ const BuyClearanceCard: FunctionComponent<
 	buyingClearanceCardType,
 	setBuyingClearanceCardType,
 	clearanceCardMintValue,
-	clearanceCardIDsMintValue,
 	setClearanceCardMintValue,
-	setClearanceCardIDsMintValue,
 	onPurchaseClearanceCard,
 	onPurchaseTopClearanceCard,
 	processing
@@ -58,14 +55,6 @@ const BuyClearanceCard: FunctionComponent<
 		<Modal open={!!buyingClearanceCardType} onClose={handleClose}>
 			<form className="buy-clearance-card" onSubmit={handleSubmit}>
 				<h2>Buy Genesis NFT</h2>
-				<label>Enter Fanboy Pass Token IDs (Comma seperated e.g. 1,2,3)</label>
-				<Input
-					name="IDs"
-					type="text"
-					required
-					value={clearanceCardIDsMintValue}
-					onChange={event => setClearanceCardIDsMintValue(event.target.value)}
-				/>
 				<label>Amount of NFTs to claim</label>
 				<Input
 					min={1}
