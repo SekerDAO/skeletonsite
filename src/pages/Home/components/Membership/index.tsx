@@ -1,7 +1,7 @@
 // import {FunctionComponent, useContext, useState} from "react"
 import {FunctionComponent, useContext, useState} from "react"
 import {ReactComponent as DoneCircle} from "../../../../assets/icons/done-circle.svg"
-import Opensea from "../../../../assets/icons/opensea_logo.png"
+// import Opensea from "../../../../assets/icons/opensea_logo.png"
 import groupiePassSrc from "../../../../assets/images/SkeletonSteph_Genesis_Blindbox.png"
 import Button from "../../../../components/Button"
 import Grid from "../../../../components/Grid"
@@ -22,7 +22,6 @@ const Membership: FunctionComponent = () => {
 		clearanceCardMintValue,
 		clearanceCardIDsMintValue,
 		setClearanceCardMintValue,
-		setClearanceCardIDsMintValue,
 		processingClearanceCardPurchase,
 		// processingFanboyPassMint,
 		clearanceCardTotal
@@ -42,7 +41,6 @@ const Membership: FunctionComponent = () => {
 				clearanceCardMintValue={clearanceCardMintValue}
 				clearanceCardIDsMintValue={clearanceCardIDsMintValue}
 				setClearanceCardMintValue={setClearanceCardMintValue}
-				setClearanceCardIDsMintValue={setClearanceCardIDsMintValue}
 				onPurchaseClearanceCard={onPurchaseClearanceCard}
 				onPurchaseTopClearanceCard={onPurchaseTopClearanceCard}
 				// onMintFanboyPass={onMintFanboyPass}
@@ -94,7 +92,7 @@ const Membership: FunctionComponent = () => {
 								<Grid className="membership__item-img-container">
 									<img src={groupiePassSrc} className="membership__item-img-container-steph_img" />
 									<p className="membership__subheader-2">
-										Limited Skeleton Steph &quot;Genesis Series&quot; (Allowlist)
+										Limited Skeleton Steph &quot;Genesis Series&quot;
 									</p>
 									<p className="membership__item-minted">
 										{clearanceCardTotal} minted / 2100 total
@@ -105,14 +103,8 @@ const Membership: FunctionComponent = () => {
 											setBuyingClearanceCardType("001")
 										}}
 									>
-										Allowlist Mint
+										Mint
 									</Button>
-									<img src={Opensea} className="membership__item-img-container-opensea" />
-									<p>
-										<a href="https://opensea.io/collection/skeleton-steph-fanboy-pass">
-											Purchase an unclaimed &quot;Fanboy Pass&quot; Allowlist NFT on OpenSea
-										</a>
-									</p>
 								</Grid>
 							</Grid>
 							<Grid size={6} xs={12} sm={12} lg={12} className="membership__item">

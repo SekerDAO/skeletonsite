@@ -27,7 +27,7 @@ type MembershipState = {
 }
 
 const useMembership = (): MembershipState => {
-	const {infuraProvider, purchase, purchaseAllowlist, freeMint} = useContext(Web3Context)
+	const {infuraProvider, purchase, freeMint} = useContext(Web3Context)
 	const [processingClearanceCardPurchase, setProcessingClearanceCardPurchase] = useState(false)
 	const [processingFanboyPassMint, setProcessingFanboyPassMint] = useState(false)
 	const [clearanceCardMintValue, setClearanceCardMintValue] = useState<string>("")
@@ -87,11 +87,10 @@ const useMembership = (): MembershipState => {
 	const onPurchaseClearanceCard = useCallback(async () => {
 		setProcessingClearanceCardPurchase(true)
 		try {
-			const success = await purchaseAllowlist({
+			const success = await purchase({
 				contractAddress: config.CLEARANCE_CARD_001_CONTRACT_ADDRESS,
 				abi: ClearanceCard001.abi,
 				etherValueString: "0.076",
-				IDs: clearanceCardIDsMintValue,
 				mintAmount: clearanceCardMintValue
 			})
 			if (success) {

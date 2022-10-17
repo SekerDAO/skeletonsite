@@ -108,9 +108,16 @@ export const useWeb3 = (): IWeb3ContextContainer => {
 			)
 			return false
 		} else {
-			const tx = await saleContract.mint(amount, {value})
-			await tx.wait()
-			return true
+			try {
+				const tx = await saleContract.mint(amount, {value})
+				await tx.wait()
+				return true
+			} catch (err) {
+				// console.log(err.message) // prints ethers error message containing the json rpc response as it is (along with error stacks from node if sent)
+				// console.log(err.error.message) // short and sweet error message
+				toastError(`Woops! The mint failed with message: ${err.error.message}`)
+				return false
+			}
 		}
 	}
 
