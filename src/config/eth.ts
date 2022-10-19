@@ -1,4 +1,5 @@
 import BurnerConnectProvider from "@burner-wallet/burner-connect-provider"
+import CoinbaseWalletSDK from "@coinbase/wallet-sdk"
 // @ts-expect-error module doesn't have types
 import MewConnect from "@myetherwallet/mewconnect-web-client"
 import Torus from "@toruslabs/torus-embed"
@@ -18,6 +19,13 @@ export default {
 }
 
 const providerOptions = {
+	coinbasewallet: {
+		package: CoinbaseWalletSDK,
+		options: {
+			appName: "Web 3 Modal Demo",
+			infuraId: infuraConfig.INFURA_ID
+		}
+	},
 	walletconnect: {
 		package: WalletConnectProvider, // required
 		options: {
