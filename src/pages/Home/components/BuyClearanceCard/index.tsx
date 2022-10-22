@@ -38,7 +38,7 @@ const BuyClearanceCard: FunctionComponent<
 	const isTopCard = buyingClearanceCardType === "TOP"
 	// const title = isTopCard ? "Top Clearance Cards" : "001 Clearance Cards"
 	const clearanceCardIntValue = parseInt(clearanceCardMintValue)
-	const transactionTotal = clearanceCardIntValue * (isTopCard ? 0.5 : 0.076)
+	const transactionTotal = clearanceCardIntValue * (isTopCard ? 0.5 : 0.045)
 
 	const handleClose = () => {
 		setBuyingClearanceCardType(undefined)
@@ -65,7 +65,7 @@ const BuyClearanceCard: FunctionComponent<
 					value={clearanceCardMintValue}
 					onChange={event => setClearanceCardMintValue(event.target.value)}
 				/>
-				<Copy>Price per item: {isTopCard ? 0.5 : 0.076} (ETH)</Copy>
+				<Copy>Price per item: {isTopCard ? 0.5 : 0.045} (ETH)</Copy>
 				<Copy>Total: {isNaN(transactionTotal) ? 0 : transactionTotal} (ETH)</Copy>
 				{ethBalance < transactionTotal && (
 					<p className="buy-clearance-card__helper-text">
