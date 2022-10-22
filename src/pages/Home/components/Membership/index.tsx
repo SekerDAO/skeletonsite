@@ -103,7 +103,7 @@ const Membership: FunctionComponent = () => {
 											setBuyingClearanceCardType("001")
 										}}
 									>
-										Mint (Ξ 0.076)
+										Mint (Ξ 0.045)
 									</Button>
 								</Grid>
 							</Grid>

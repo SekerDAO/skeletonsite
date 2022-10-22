@@ -90,7 +90,7 @@ const useMembership = (): MembershipState => {
 			const success = await purchase({
 				contractAddress: config.CLEARANCE_CARD_001_CONTRACT_ADDRESS,
 				abi: ClearanceCard001.abi,
-				etherValueString: "0.076",
+				etherValueString: "0.045",
 				mintAmount: clearanceCardMintValue
 			})
 			if (success) {
