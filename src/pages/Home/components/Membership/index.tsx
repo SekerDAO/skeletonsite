@@ -82,9 +82,10 @@ const Membership: FunctionComponent = () => {
 								telling this one-of-a-kind story. Want to know how you can potentially be an actual
 								character on the show? Each NFT grants you access to the private channels in our
 								Discord where you can reach out to our team and learn how! We will be revealing
-								elements of your Genesis Character up until Oct 29th for the final full reveal, live
-								at Seker Factory DAO in Downtown Los Angeles. Stay tuned! You may very well be one
-								of the lucky ones to mint an ultra-rare Skelly!
+								elements of your Genesis Character as time goes on. We will all vote together as NFT
+								holders on the date of the final full reveal, live at Seker Factory DAO in Downtown
+								Los Angeles. Stay tuned! You may very well be one of the lucky ones to mint an
+								ultra-rare Skelly!
 							</p>
 						</Grid>
 						<Grid row className="membership__items-container">
@@ -137,7 +138,7 @@ const Membership: FunctionComponent = () => {
 											<p>
 												At 25%, 50%, and 75% of the total supply minted, you will get to see a bit
 												more of your Characters attributes! All minted NFTs will be fully unveiled
-												on Oct. 29th.
+												at a date the we all agree on. Vote with your NFT!
 												<br />
 											</p>
 										</li>
